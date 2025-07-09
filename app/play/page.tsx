@@ -1,9 +1,9 @@
-import Button from '@/components/common/Button'
+import Carousel from '@/components/play/Carousel'
 
 export default function PlayPage() {
   return (
     <div>
-      <h1>Play</h1>
+      <Carousel />
     </div>
   )
 }
