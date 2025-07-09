@@ -68,7 +68,7 @@ export default function Carousel() {
                 height: '400px',
               }}
             >
-              <div className="p-10 rounded-lg ml-12">
+              <div className="p-10 rounded-lg ml-12 z-1">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">{slide.title}</h1>
                 <p className="text-lg md:text-xl mb-8 text-gray-200">{slide.description}</p>
                 <Button variant="primary" size="md" className="flex items-center font-semibold text-sm" rounded>
@@ -89,6 +89,7 @@ export default function Carousel() {
                   {slide.button}
                 </Button>
               </div>
+              <div className="absolute inset-0 bg-black opacity-40" />
             </div>
           ))}
         </div>
