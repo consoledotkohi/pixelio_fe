@@ -31,7 +31,7 @@ export default function Button({
     primary: 'bg-[#5D16ED] text-white hover:bg-[#4A11C7] ',
     secondary: 'bg-[#1E293B] text-white hover:bg-[#1E293B]/80',
     outline: 'border border-[#5D16ED] text-[#5D16ED] hover:bg-[#5D16ED] hover:text-white',
-    light: 'border border-[#D1D5DB] text-[#6B7280] hover:bg-[#D1D5DB]/80',
+    light: 'text-[#6B7280] hover:bg-[#D1D5DB]/80',
   }
 
   const sizes = {

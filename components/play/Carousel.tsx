@@ -45,7 +45,7 @@ export default function Carousel() {
     if (!emblaApi) return
     const interval = setInterval(() => {
       emblaApi.scrollNext()
-    }, 2000)
+    }, 5000)
     return () => clearInterval(interval)
   }, [emblaApi])
 
