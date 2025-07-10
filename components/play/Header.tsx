@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Button from '../common/Button'
 import DialogModal from '../common/Dialog'
+import SignInModalContent from '../modals/SignInModalContent'
 
 const UserControls = () => {
   return (
@@ -80,7 +81,11 @@ const Header = () => {
       <Button variant="outline" className="bg-white" onClick={() => setIsOpen(true)}>
         로그인/회원가입
       </Button>
-      {isOpen && <DialogModal isOpen={isOpen} onClose={() => setIsOpen(false)} />}
+      {isOpen && (
+        <DialogModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+          <SignInModalContent />
+        </DialogModal>
+      )}
     </header>
   )
 }

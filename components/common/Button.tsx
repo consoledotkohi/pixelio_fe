@@ -37,14 +37,14 @@ export default function Button({
   const sizes = {
     sm: 'h-[28px] px-4',
     md: 'h-[40px] px-6',
-    lg: 'h-[40px] w-[240px]',
+    lg: 'h-[44px] w-full',
   }
 
   return (
     <button
       type={type || 'button'}
       className={
-        `${baseClasses} ${rounded ? 'rounded-xl' : 'rounded-md'} ` +
+        `${baseClasses} ${rounded ? 'rounded-full' : 'rounded-md'} ` +
         (variant ? `${variants[variant]} ${sizes[size]} ${className}` : `${sizes[size]} ${className}`)
       }
       onClick={onClick}

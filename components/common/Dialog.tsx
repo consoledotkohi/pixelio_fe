@@ -1,17 +1,20 @@
+import React, { ReactNode } from 'react'
 import { Dialog } from '@headlessui/react'
 
-export default function DialogModal({ isOpen, onClose }) {
+interface DialogModalProps {
+  isOpen: boolean
+  onClose: () => void
+  children: ReactNode
+}
+
+export default function DialogModal({ isOpen, onClose, children }: DialogModalProps) {
   return (
     <>
       <Dialog open={isOpen} onClose={onClose}>
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-        <div className="fixed inset-0 flex items-center justify-center">
-          <Dialog.Panel className="bg-white p-6 rounded">
-            <Dialog.Title className="text-lg font-bold">모달 제목</Dialog.Title>
-            <Dialog.Description>여기는 설명입니다.</Dialog.Description>
-
-            <p>모달 내용</p>
-            <button onClick={onClose}>닫기</button>
+        <div className="fixed inset-0 flex items-center justify-center z-5">
+          <Dialog.Panel className="bg-white w-full max-w-lg p-10 rounded-xl shadow-lg duration-200">
+            {children}
           </Dialog.Panel>
         </div>
       </Dialog>

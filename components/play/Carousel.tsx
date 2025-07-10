@@ -107,7 +107,7 @@ export default function Carousel() {
         &#8594;
       </button>
       {/* 내비게이터 */}
-      <div className="absolute left-1/2 bottom-8 -translate-x-1/2 flex gap-2 z-10">
+      <div className="absolute left-1/2 bottom-8 -translate-x-1/2 flex gap-2 z-1">
         {slides.map((_, idx) => (
           <button
             key={idx}
