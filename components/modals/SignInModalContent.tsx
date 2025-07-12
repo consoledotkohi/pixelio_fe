@@ -15,7 +15,7 @@ export default function SignInModalContent() {
         className="flex items-center justify-center border border-gray-300 rounded-lg mb-4 bg-white hover:bg-gray-50 transition"
       >
         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g clip-path="url(#clip0_164_421)">
+          <g clipPath="url(#clip0_164_421)">
             <path
               d="M16.0176 6.30052H15.3865V6.268H8.335V9.402H12.763C12.117 11.2264 10.3811 12.536 8.335 12.536C5.73887 12.536 3.634 10.4311 3.634 7.835C3.634 5.23887 5.73887 3.134 8.335 3.134C9.53336 3.134 10.6236 3.58608 11.4537 4.32453L13.6699 2.1084C12.2705 0.804263 10.3987 0 8.335 0C4.00812 0 0.5 3.50812 0.5 7.835C0.5 12.1619 4.00812 15.67 8.335 15.67C12.6619 15.67 16.17 12.1619 16.17 7.835C16.17 7.30966 16.1159 6.79686 16.0176 6.30052Z"
               fill="#FFC107"
