@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   variant?: 'primary' | 'secondary' | 'outline' | 'light'
   rounded?: boolean
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
   className?: string
   disabled?: boolean
   onClick?: React.MouseEventHandler<HTMLButtonElement>
@@ -35,6 +35,7 @@ export default function Button({
   }
 
   const sizes = {
+    xs: 'h-[18px] px-[10px]',
     sm: 'h-[28px] px-4',
     md: 'h-[40px] px-6',
     lg: 'h-[44px] w-full',

@@ -61,7 +61,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
-    <header className="w-full bg-gray-800 px-4 py-3 flex items-center justify-between">
+    <header className="w-full bg-[#2d2f30] px-4 py-3 flex items-center justify-between">
       <div className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
         <div className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center relative">
           <Image src="/pixelio_logo.png" alt="pixelio" fill />

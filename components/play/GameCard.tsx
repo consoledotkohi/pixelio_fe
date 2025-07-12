@@ -24,7 +24,7 @@ export default function GameCard({
   isLiked = false,
 }: GameCardProps) {
   return (
-    <div className="bg-[#353536] rounded-xl overflow-hidden shadow-md w-[350px]">
+    <div className="rounded-xl shadow-md h-[376px]">
       <div className="relative w-full h-[220px] bg-[#F5F6F7] flex items-center justify-center">
         {isNew && (
           <div className="absolute top-4 left-4 z-10">
