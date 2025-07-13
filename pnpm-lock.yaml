@@ -17,6 +17,9 @@ importers:
       '@tanstack/react-query-devtools':
         specifier: ^5.81.5
         version: 5.81.5(@tanstack/react-query@5.81.5(react@19.1.0))(react@19.1.0)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       embla-carousel-autoplay:
         specifier: ^8.6.0
         version: 8.6.0(embla-carousel@8.6.0)

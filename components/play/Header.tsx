@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Button from '../common/Button'
 import DialogModal from '../common/Dialog'
 import SignInModalContent from '../modals/SignInModalContent'
+import Input from '../common/Input'
 
 const UserControls = () => {
   return (
@@ -59,6 +60,7 @@ const UserControls = () => {
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
+  const [value, setValue] = useState<string>('')
 
   return (
     <header className="w-full bg-[#2d2f30] px-4 py-3 flex items-center justify-between">
@@ -69,11 +71,16 @@ const Header = () => {
         <span className="text-lg sm:text-2xl font-bold text-blue-400">pixelio</span>
       </div>
 
-      <div className="flex-1 mx-8">
+      <div className="flex-1 mx-10">
         {/* TODO: 검색창 컴포넌트로 교체 */}
-        <div className="w-full h-12 bg-gray-700 rounded-lg flex items-center px-4 text-gray-400">
+        <div className="w-full h-12 rounded-lg flex justify-center items-center px-4">
           {/* 게임 검색... */}
-          {/* TODO: 실제 검색창으로 교체 */}
+          <Input
+            placeholder="게임 검색..."
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            className="w-[400px]"
+          />
         </div>
       </div>
 
