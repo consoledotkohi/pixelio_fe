@@ -1,6 +1,7 @@
 'use client'
 
 import { ButtonHTMLAttributes, ReactNode } from 'react'
+import clsx from 'clsx'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   type?: 'button' | 'submit' | 'reset'
@@ -18,7 +19,7 @@ export default function Button({
   children,
   variant,
   size = 'md',
-  className = '',
+  className,
   rounded = false,
   disabled,
   onClick,
@@ -44,10 +45,13 @@ export default function Button({
   return (
     <button
       type={type || 'button'}
-      className={
-        `${baseClasses} ${rounded ? 'rounded-full' : 'rounded-md'} ` +
-        (variant ? `${variants[variant]} ${sizes[size]} ${className}` : `${sizes[size]} ${className}`)
-      }
+      className={clsx(
+        baseClasses,
+        rounded ? 'rounded-full' : 'rounded-md',
+        variant && variants[variant],
+        sizes[size],
+        className
+      )}
       onClick={onClick}
       disabled={disabled}
       {...props}

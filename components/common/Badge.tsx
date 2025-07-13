@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import clsx from 'clsx'
 
 interface BadgeProps {
   children: ReactNode
@@ -22,6 +23,6 @@ const sizes = {
 
 const baseClasses = 'inline-flex items-center justify-center'
 
-export default function Badge({ children, variant = 'pending', size = 'md', className = '' }: BadgeProps) {
-  return <span className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`}>{children}</span>
+export default function Badge({ children, variant = 'pending', size = 'md', className }: BadgeProps) {
+  return <span className={clsx(baseClasses, variants[variant], sizes[size], className)}>{children}</span>
 }
