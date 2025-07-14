@@ -2,6 +2,17 @@ import Image from 'next/image'
 import Button from '../common/Button'
 
 export default function SignInModalContent() {
+  const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
+  const REDIRECT_URI = 'https://localhost:3333/oauth/google/callback'
+
+  const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${encodeURIComponent(
+    REDIRECT_URI
+  )}&response_type=code&scope=openid%20email%20profile`
+
+  const handleGoogleLogin = () => {
+    window.location.href = googleAuthUrl
+  }
+
   return (
     <div className="flex flex-col items-center w-full max-w-md mx-auto py-16 px-8">
       <div className="flex items-center mb-20">
@@ -13,6 +24,7 @@ export default function SignInModalContent() {
       <Button
         size="lg"
         className="flex items-center justify-center border border-gray-300 rounded-lg mb-4 bg-white hover:bg-gray-50 transition"
+        onClick={handleGoogleLogin}
       >
         <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_164_421)">

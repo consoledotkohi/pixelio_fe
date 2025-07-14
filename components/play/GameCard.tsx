@@ -27,14 +27,14 @@ export default function GameCard({
     <div className="rounded-xl shadow-md h-[376px]">
       <div className="relative w-full h-[220px] bg-[#F5F6F7] flex items-center justify-center">
         {isNew && (
-          <div className="absolute top-4 left-4 z-10">
+          <div className="absolute top-4 left-4 z-1">
             <Badge size="md" className="bg-[#DF264E] text-white border-none text-base font-bold">
               NEW
             </Badge>
           </div>
         )}
         {/* TODO : 토글 가능한 버튼으로 변경 */}
-        <button className="absolute top-4 right-4 z-10 w-11 h-11 bg-[#6B6B6B] rounded-full flex items-center justify-center focus:outline-none">
+        <button className="absolute top-4 right-4 z-1 w-11 h-11 bg-[#6B6B6B] rounded-full flex items-center justify-center focus:outline-none">
           <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path
               d="M12.1 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54l-1.35 1.31z"

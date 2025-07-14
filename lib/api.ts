@@ -1,5 +1,5 @@
 // API 기본 설정
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api'
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL
 
 // API 응답 타입
 export interface ApiResponse<T = any> {
