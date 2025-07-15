@@ -6,6 +6,7 @@ import Button from '../common/Button'
 import DialogModal from '../common/Dialog'
 import SignInModalContent from '../modals/SignInModalContent'
 import Input from '../common/Input'
+import { useAuthStore } from '@/store'
 
 const UserControls = () => {
   return (
@@ -61,6 +62,7 @@ const UserControls = () => {
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [value, setValue] = useState<string>('')
+  const token = useAuthStore((state) => state.token)
 
   return (
     <header className="w-full bg-[#2d2f30] px-4 py-3 flex items-center justify-between">
@@ -84,10 +86,14 @@ const Header = () => {
         </div>
       </div>
 
-      {/* <UserControls /> */}
-      <Button variant="outline" className="bg-white" onClick={() => setIsOpen(true)}>
-        로그인/회원가입
-      </Button>
+      {token ? (
+        <UserControls />
+      ) : (
+        <Button variant="outline" className="bg-white" onClick={() => setIsOpen(true)}>
+          로그인/회원가입
+        </Button>
+      )}
+
       {isOpen && (
         <DialogModal isOpen={isOpen} onClose={() => setIsOpen(false)}>
           <SignInModalContent />
