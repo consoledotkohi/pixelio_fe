@@ -11,7 +11,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         defaultOptions: {
           queries: {
             staleTime: 60 * 1000, // 1분
-            gcTime: 10 * 60 * 1000, // 10분 (이전 cacheTime)
+            gcTime: 10 * 60 * 1000, // 10분
             retry: 1,
             refetchOnWindowFocus: false,
           },

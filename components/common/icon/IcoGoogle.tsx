@@ -1,4 +1,4 @@
-export default function IcoGoogle() {
+const IcoGoogle = () => {
   return (
     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_164_421)">
@@ -27,3 +27,5 @@ export default function IcoGoogle() {
     </svg>
   )
 }
+
+export default IcoGoogle

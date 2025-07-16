@@ -1,15 +1,20 @@
-import React from 'react'
+import { FC, ChangeEvent, KeyboardEvent } from 'react'
+import clsx from 'clsx'
+import IcoSearch from './icon/IcoSearch'
 
-interface InputProps {
+export interface InputProps {
   theme?: 'light' | 'dark'
   placeholder?: string
   value: string
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
   onSearch?: () => void
   className?: string
 }
 
-const Input: React.FC<InputProps> = ({
+/**
+ * Input: A styled, accessible text input with optional search icon and theme.
+ */
+export const Input: FC<InputProps> = ({
   theme = 'dark',
   placeholder = '게임 검색...',
   value,
@@ -19,41 +24,25 @@ const Input: React.FC<InputProps> = ({
 }) => {
   const isDark = theme === 'dark'
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && onSearch) onSearch()
+  }
+
   return (
-    <div className={`relative ${className ?? ''}`}>
-      {/* 검색 아이콘 */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className={
-          isDark
-            ? 'absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4'
-            : 'absolute left-2.5 top-2.5 h-4 w-4 text-gray-400'
-        }
-      >
-        <circle cx="11" cy="11" r="8"></circle>
-        <path d="m21 21-4.3-4.3"></path>
-      </svg>
+    <div className={clsx('relative', className)}>
+      <IcoSearch isDark={isDark} />
       <input
-        className={
+        className={clsx(
+          'flex h-10 w-full rounded-md border px-3 py-2 text-sm outline-none',
           isDark
-            ? 'flex h-10 w-full rounded-md border border-gray-600 px-3 py-2 pl-10 bg-[#3D3D3D] text-white placeholder-gray-400 focus:border-gray-400 text-sm outline-none'
-            : 'flex h-10 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm pl-8 w-[300px] text-gray-900 placeholder-gray-400 focus:border-gray-400 outline-none'
-        }
+            ? 'border-gray-600 pl-10 bg-[#3D3D3D] text-white placeholder-gray-400 focus:border-gray-400'
+            : 'border-gray-300 pl-8 bg-white w-[300px] text-gray-900 placeholder-gray-400 focus:border-gray-400'
+        )}
         placeholder={isDark ? placeholder : '게임 이름 또는 크리에이터로 검색...'}
         type="text"
         value={value}
         onChange={onChange}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' && onSearch) onSearch()
-        }}
+        onKeyDown={handleKeyDown}
       />
     </div>
   )

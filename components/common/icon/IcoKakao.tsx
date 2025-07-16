@@ -1,4 +1,4 @@
-export default function IcoKakao() {
+const IcoKakao = () => {
   return (
     <svg
       width="17"
@@ -24,3 +24,5 @@ export default function IcoKakao() {
     </svg>
   )
 }
+
+export default IcoKakao
