@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../common/Button'
 
 const genres = [
   '액션',
@@ -29,14 +28,12 @@ export default function LNB() {
         </div>
         <div className="flex flex-wrap gap-3">
           {genres.map((genre) => (
-            <Button
+            <button
               key={genre}
-              size="xs"
-              rounded
-              className="border border-[#D0D0D0] text-[#D0D0D0] hover:bg-[#22C55E] transition text-xs"
+              className="border border-[#D0D0D0] text-[#D0D0D0] hover:bg-[#22C55E] transition h-[18px] px-[10px] text-xs rounded-full"
             >
               {genre}
-            </Button>
+            </button>
           ))}
         </div>
       </section>
@@ -49,14 +46,12 @@ export default function LNB() {
         </div>
         <div className="flex flex-wrap gap-3">
           {tags.map((tag) => (
-            <Button
+            <button
               key={tag}
-              size="xs"
-              rounded
-              className="border border-[#D0D0D0] text-[#D0D0D0] hover:bg-[#F97316] transition text-xs"
+              className="border border-[#D0D0D0] text-[#D0D0D0] hover:bg-[#F97316] transition h-[18px] px-[10px] text-xs rounded-full"
             >
               {tag}
-            </Button>
+            </button>
           ))}
         </div>
       </section>
