@@ -1,25 +1,28 @@
-import React, { ReactNode } from 'react'
+import { ReactNode, FC } from 'react'
 import { Dialog } from '@headlessui/react'
 import clsx from 'clsx'
 
-interface DialogModalProps {
+export interface DialogModalProps {
   isOpen: boolean
   onClose: () => void
   children: ReactNode
   className?: string
 }
 
-export default function DialogModal({ isOpen, onClose, children, className }: DialogModalProps) {
-  return (
-    <>
-      <Dialog open={isOpen} onClose={onClose}>
-        <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-        <div className="fixed inset-0 flex items-center justify-center z-5">
-          <Dialog.Panel className={clsx('bg-white w-full max-w-lg p-10 rounded-xl shadow-lg duration-200', className)}>
-            {children}
-          </Dialog.Panel>
-        </div>
-      </Dialog>
-    </>
-  )
-}
+/**
+ * DialogModal: Accessible modal dialog using Headless UI.
+ */
+export const DialogModal: FC<DialogModalProps> = ({ isOpen, onClose, children, className }) => (
+  <Dialog open={isOpen} onClose={onClose} className="fixed inset-0 z-50 flex items-center justify-center">
+    {/* Overlay */}
+    <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
+    {/* Centered Panel */}
+    <Dialog.Panel
+      className={clsx('relative bg-white w-full max-w-lg p-10 rounded-xl shadow-lg transition-all', className)}
+    >
+      {children}
+    </Dialog.Panel>
+  </Dialog>
+)
+
+export default DialogModal

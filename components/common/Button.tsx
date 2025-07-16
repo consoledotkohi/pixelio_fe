@@ -9,6 +9,7 @@ const VARIANT_STYLES = {
   secondary: 'bg-[#1E293B] text-white hover:bg-[#1E293B]/80',
   outline: 'border border-[#5D16ED] text-[#5D16ED] hover:bg-[#5D16ED] hover:text-white',
   light: 'text-[#6B7280] hover:bg-[#D1D5DB]/80',
+  default: '',
 } as const
 
 // Button size variants
